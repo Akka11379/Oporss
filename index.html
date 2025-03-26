@@ -3,144 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Опрос: Вступить в команду?</title>
+    <title>Перейти в чат Telegram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .question h3 {
-            font-size: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #5B86E5, #36D1DC);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
         }
         .container {
-            width: 80%;
-            margin: 0 auto;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
         }
-        .score {
-            font-size: 24px;
-            font-weight: bold;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        .btn {
+            background-color: #0088cc;
+            color: #fff;
+            padding: 16px 32px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background-color: #006f8e;
+            transform: scale(1.1);
+        }
+        .btn:active {
+            background-color: #005f7a;
+        }
+        .checkbox-container {
+            margin-top: 20px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .checkbox-container input {
+            margin-right: 8px;
+        }
+        ul {
+            list-style-type: none;
             margin-top: 30px;
+            padding-left: 0;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .checkbox-container {
+            margin-top: 20px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .checkbox-container input {
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Хотите вступить в команду?</h1>
-        <p>Ответьте на 10 вопросов, чтобы мы могли понять, подходите ли вы для нашей команды.</p>
+<div class="container">
+    <h1>Присоединяйся к нашему чату</h1>
+    <p>Нажми на кнопку ниже, чтобы перейти в наш Telegram-чат и обсудить всё, что тебя интересует!</p>
+    <a href="https://t.me/your_chat_link" class="btn" target="_blank">Перейти в чат</a>
 
-        <form id="surveyForm">
-            <div class="question">
-                <h3>1. У вас есть опыт работы в команде?</h3>
-                <button type="button" onclick="recordAnswer('q1', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q1', 'no')">Нет</button>
-            </div>
+    <!-- Неупорядоченный список -->
+    <ul>
+        <li>Слушать музуку</li>
+        <li>Нечего не делать</li>
+        <li>Уважать сашу</li>
+    </ul>
 
-            <div class="question">
-                <h3>2. Вы готовы работать в ночное время?</h3>
-                <button type="button" onclick="recordAnswer('q2', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q2', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>3. Вы умеете работать под давлением?</h3>
-                <button type="button" onclick="recordAnswer('q3', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q3', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>4. У вас есть опыт работы с Android-разработкой?</h3>
-                <button type="button" onclick="recordAnswer('q4', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q4', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>5. Вы умеете работать с ПК на уровне продвинутого пользователя?</h3>
-                <button type="button" onclick="recordAnswer('q5', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q5', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>6. Вы готовы изучать новые технологии?</h3>
-                <button type="button" onclick="recordAnswer('q6', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q6', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>7. Вы хотите развиваться в области программирования?</h3>
-                <button type="button" onclick="recordAnswer('q7', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q7', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>8. У вас есть опыт работы с базами данных?</h3>
-                <button type="button" onclick="recordAnswer('q8', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q8', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>9. Вы можете работать в гибком графике?</h3>
-                <button type="button" onclick="recordAnswer('q9', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q9', 'no')">Нет</button>
-            </div>
-
-            <div class="question">
-                <h3>10. Вы готовы работать в команде и делиться знаниями?</h3>
-                <button type="button" onclick="recordAnswer('q10', 'yes')">Да</button>
-                <button type="button" onclick="recordAnswer('q10', 'no')">Нет</button>
-            </div>
-
-            <button type="button" onclick="submitSurvey()">Отправить</button>
-        </form>
-
-        <div id="scoreDisplay" class="score" style="display: none;">
-            <p>Вы выбрали <span id="score"></span> ответов "Да".</p>
-        </div>
+    <!-- Галочка -->
+    <div class="checkbox-container">
+        <input type="checkbox" id="agree">
+        <label for="agree">Я согласен с условиями</label>
     </div>
-
-    <script>
-        let answers = {};
-
-        function recordAnswer(question, answer) {
-            answers[question] = answer;
-        }
-
-        function submitSurvey() {
-            if (Object.keys(answers).length < 10) {
-                alert("Пожалуйста, ответьте на все вопросы.");
-                return;
-            }
-
-            let yesAnswers = 0;
-            for (let question in answers) {
-                if (answers[question] === "yes") {
-                    yesAnswers++;
-                }
-            }
-
-            // Показываем балл на экране
-            document.getElementById("scoreDisplay").style.display = "block";
-            document.getElementById("score").textContent = yesAnswers;
-
-            // Если пользователь набрал 7 и более ответов "Да", переходим к группе в Telegram
-            if (yesAnswers >= 7) {
-                alert("Поздравляем, вы подходите для команды!");
-                window.location.href = "https://t.me/RRBOLOX"; // Ссылка на вашу Telegram группу
-            } else {
-                alert("К сожалению, вы не подходите для команды.");
-            }
-        }
-    </script>
+</div>
 
 </body>
 </html>
